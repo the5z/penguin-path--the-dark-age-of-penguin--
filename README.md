@@ -107,45 +107,6 @@ Game hỗ trợ nhận diện tay:
 | Một số gesture đặc biệt | Dùng vật phẩm |
 
 ---
-
-## 📁 Cấu trúc thư mục
-
-```txt
-penguin-path/
-│
-├── main.py
-├── settings.py
-├── player.py
-├── obstacle.py
-├── enemy.py
-├── projectile.py
-├── coin.py
-├── boss.py
-├── finish_line.py
-├── track_effects.py
-├── effects.py
-├── sound_manager.py
-├── camera_preview.py
-├── hand_tracking.py
-├── intro_cutscene.py
-├── start_screen.py
-├── ui.py
-│
-├── assets/
-│   ├── characters/
-│   ├── obstacles/
-│   ├── boss/
-│   ├── decor/
-│   ├── effects/
-│   ├── backgrounds/
-│   ├── sounds/
-│   ├── ui/
-│   └── cutscene/
-│
-├── requirements.txt
-├── README.md
-└── .gitignore
-
 🖼️ Tài nguyên hình ảnh
 
 Game sử dụng nhiều loại ảnh trong thư mục assets/.
@@ -356,4 +317,43 @@ Shop và item.
 Quản lý asset hình ảnh/âm thanh.
 👤 Tác giả
 
-Project được phát triển bởi Duy Kiên.
+Project được phát triển bởi Lại Minh Hiệp và Nguyễn Quang Duy.
+
+## 📁 Cấu trúc thư mục
+
+```txt
+penguin-path/
+│
+├── main.py
+├── settings.py
+├── player.py
+├── obstacle.py
+├── enemy.py
+├── projectile.py
+├── coin.py
+├── boss.py
+├── finish_line.py
+├── track_effects.py
+├── effects.py
+├── sound_manager.py
+├── camera_preview.py
+├── hand_tracking.py
+├── intro_cutscene.py
+├── start_screen.py
+├── ui.py
+│
+├── assets/
+│   ├── characters/
+│   ├── obstacles/
+│   ├── boss/
+│   ├── decor/
+│   ├── effects/
+│   ├── backgrounds/
+│   ├── sounds/
+│   ├── ui/
+│   └── cutscene/
+│
+├── requirements.txt
+├── README.md
+└── .gitignore
+
