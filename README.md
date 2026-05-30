@@ -107,217 +107,7 @@ Game hỗ trợ nhận diện tay:
 | Một số gesture đặc biệt | Dùng vật phẩm |
 
 ---
-🖼️ Tài nguyên hình ảnh
 
-Game sử dụng nhiều loại ảnh trong thư mục assets/.
-
-Nhân vật
-assets/characters/
-
-Ví dụ:
-
-Piko idle
-Piko chạy
-Piko ăn mừng
-Piko dùng khiên
-Vật cản
-assets/obstacles/
-
-Ví dụ:
-
-Khối băng bình thường
-Khối băng hư hỏng cấp 1
-Khối băng hư hỏng cấp 2
-Khối băng vỡ
-Bão tuyết / lốc tuyết animation nhiều frame
-Boss
-assets/boss/
-
-Ví dụ:
-
-Boss intro frame
-Boss chạy đuổi
-Boss ném
-Boss nhảy đánh
-Vật boss ném
-Trang trí đường chạy
-assets/decor/
-
-Ví dụ:
-
-Cây
-Đá
-Băng nhọn
-UI
-assets/ui/
-
-Ví dụ:
-
-Icon máu
-Icon xu
-Icon khiên
-Icon năng lượng
-Icon thuốc làm chậm
-Icon bom
-Panel thắng/thua/shop
-Cutscene
-assets/cutscene/
-
-Ví dụ:
-
-intro_1.png
-intro_2.png
-intro_3.png
-intro_4.png
-🔊 Âm thanh
-
-Thư mục âm thanh:
-
-assets/sounds/
-
-Các âm thanh gợi ý:
-
-hit.wav: khi Piko bị va chạm.
-shield_break.wav: khi khiên vỡ.
-shoot.wav: khi bắn.
-coin.wav: khi nhặt xu.
-win.wav: khi hoàn thành màn.
-lose.wav: khi thua.
-boss_roar.wav: khi boss xuất hiện.
-bomb.wav: khi kích hoạt bom.
-not_enough_coin.wav: khi không đủ xu trong shop.
-intro.wav: âm thanh mở đầu.
-⚙️ Cài đặt môi trường
-1. Clone project
-git clone https://github.com/USERNAME/penguin-path.git
-cd penguin-path
-2. Tạo môi trường ảo
-
-Trên Windows:
-
-python -m venv .venv
-.venv\Scripts\activate
-
-Trên macOS/Linux:
-
-python3 -m venv .venv
-source .venv/bin/activate
-3. Cài thư viện
-pip install -r requirements.txt
-4. Chạy game
-python main.py
-📦 Requirements
-pygame==2.6.1
-opencv-python
-mediapipe
-numpy
-🧩 Công nghệ sử dụng
-Python: ngôn ngữ chính.
-Pygame: xây dựng game 2D.
-OpenCV: đọc camera.
-MediaPipe: nhận diện tay.
-Pygame Mixer: phát nhạc và hiệu ứng âm thanh.
-🎯 Mục tiêu gameplay
-
-Người chơi cần giúp Piko vượt qua các vùng băng nguy hiểm bằng cách:
-
-Né vật cản.
-Thu thập xu.
-Quản lý máu và năng lượng.
-Mua vật phẩm trong shop.
-Sử dụng khiên và súng hợp lý.
-Đánh bại hoặc sống sót trước boss gấu Bắc Cực.
-🧠 Một số cơ chế nổi bật
-Máu không hồi giữa màn
-
-Máu được lưu qua các màn chơi. Nếu màn 1 mất máu, màn 2 sẽ tiếp tục với lượng máu còn lại.
-
-Năng lượng dùng chung
-
-Súng và khiên dùng chung năng lượng:
-
-Bắn: -1 năng lượng.
-Khiên: -5 năng lượng.
-Boss có projectile riêng
-
-Vật boss ném không xuất hiện ngay như vật cản thường. Nó bay từ tay boss ra đường trước, sau đó mới trôi về phía Piko như một vật cản.
-
-Bão tuyết lớn
-
-Bão tuyết có thể là một vật thể lớn chiếm cả 3 làn và gây sát thương nếu Piko chạm vào.
-
-🧪 Trạng thái phát triển
-
-Game hiện đang trong giai đoạn prototype/mở rộng tính năng.
-
-Các phần đã có:
-
-Gameplay 3 làn.
-Vật cản.
-Coin.
-Shop.
-Boss.
-Cutscene.
-Âm thanh.
-Camera hand tracking.
-UI tiếng Việt.
-
-Các phần có thể phát triển thêm:
-
-Lưu điểm cao.
-Nâng cấp kỹ năng.
-Thêm nhiều boss.
-Thêm nhiều loại màn chơi.
-Tối ưu hiệu năng.
-Đóng gói game thành file .exe.
-🛠️ Lỗi thường gặp
-1. Không mở được camera
-
-Nếu terminal báo không mở được camera, game vẫn có thể chơi bằng bàn phím.
-
-Kiểm tra:
-
-Camera có đang bị app khác chiếm không.
-Đúng camera index chưa.
-OpenCV đã cài chưa.
-2. Không tìm thấy ảnh
-
-Nếu terminal báo:
-
-Không tìm thấy ảnh...
-
-Kiểm tra:
-
-File ảnh có đúng tên không.
-File có đúng thư mục assets/... không.
-Đuôi file là .png, .jpg, .wav đúng chưa.
-3. Không nghe thấy âm thanh
-
-Kiểm tra:
-
-File âm thanh có đúng thư mục assets/sounds/ không.
-Tên file trong code có khớp không.
-Âm lượng máy có bị tắt không.
-4. Game bị đen màn hình
-
-Kiểm tra:
-
-pygame.display.flip() có nằm cuối vòng lặp không.
-Phần draw có chạy đúng game_state không.
-Intro/cutscene có bị return sớm không.
-📌 Ghi chú
-
-Đây là project game học tập và thử nghiệm, tập trung vào:
-
-Pygame 2D.
-Điều khiển bằng camera.
-Logic game nhiều màn.
-Boss battle.
-Shop và item.
-Quản lý asset hình ảnh/âm thanh.
-👤 Tác giả
-
-Project được phát triển bởi Lại Minh Hiệp và Nguyễn Quang Duy.
 
 ## 📁 Cấu trúc thư mục
 
@@ -356,4 +146,381 @@ penguin-path/
 ├── requirements.txt
 ├── README.md
 └── .gitignore
+```
+## 🖼️ Tài nguyên hình ảnh
+
+Game sử dụng nhiều tài nguyên hình ảnh trong thư mục `assets/`. Các tài nguyên được chia theo từng nhóm để dễ quản lý và chỉnh sửa.
+
+### Nhân vật
+
+Thư mục:
+
+```txt
+assets/characters/
+```
+
+Bao gồm các hình ảnh liên quan đến nhân vật chính Piko:
+
+* Piko đứng yên
+* Piko chạy
+* Piko ăn mừng
+* Piko dùng khiên
+* Các frame animation của Piko
+
+### Vật cản
+
+Thư mục:
+
+```txt
+assets/obstacles/
+```
+
+Bao gồm các loại vật cản trong game:
+
+* Khối băng bình thường
+* Khối băng hư hỏng cấp 1
+* Khối băng hư hỏng cấp 2
+* Khối băng vỡ
+* Bão tuyết / lốc tuyết dạng animation nhiều frame
+
+Một số vật cản có thể bị bắn hỏng theo nhiều cấp độ. Khi bị phá đủ số lần, Piko có thể đi xuyên qua.
+
+### Boss
+
+Thư mục:
+
+```txt
+assets/boss/
+```
+
+Bao gồm hình ảnh của boss gấu Bắc Cực:
+
+* Boss xuất hiện
+* Boss chạy đuổi
+* Boss ném vật thể
+* Boss nhảy đánh
+* Vật thể boss ném như băng đá hoặc cây
+
+Boss ở màn 3 có nhiều trạng thái hành động khác nhau, giúp trận đấu cuối có cảm giác sinh động hơn.
+
+### Trang trí đường chạy
+
+Thư mục:
+
+```txt
+assets/decor/
+```
+
+Bao gồm các vật trang trí hai bên đường chạy:
+
+* Cây
+* Đá
+* Băng nhọn
+
+Các vật trang trí này không gây sát thương, chủ yếu tạo chiều sâu và làm môi trường game đẹp hơn.
+
+### Giao diện người dùng
+
+Thư mục:
+
+```txt
+assets/ui/
+```
+
+Bao gồm các icon và panel giao diện:
+
+* Icon máu
+* Icon xu
+* Icon khiên
+* Icon năng lượng
+* Icon thuốc làm chậm
+* Icon bom
+* Panel thắng
+* Panel thua
+* Panel hoàn thành màn
+* Hình ảnh dùng trong shop
+
+### Cắt cảnh mở đầu
+
+Thư mục:
+
+```txt
+assets/cutscene/
+```
+
+Bao gồm các ảnh dùng cho phần intro/cutscene mở đầu:
+
+```txt
+intro_1.png
+intro_2.png
+intro_3.png
+intro_4.png
+```
+
+Các ảnh này được dùng để kể câu chuyện mở đầu trước khi người chơi vào menu chính.
+
+---
+
+## 🔊 Âm thanh
+
+Thư mục âm thanh:
+
+```txt
+assets/sounds/
+```
+
+Các âm thanh chính trong game:
+
+* `hit.wav`: phát khi Piko bị va chạm.
+* `shield_break.wav`: phát khi khiên bị vỡ.
+* `shoot.wav`: phát khi Piko bắn đạn tuyết.
+* `coin.wav`: phát khi nhặt xu.
+* `win.wav`: phát khi hoàn thành màn.
+* `lose.wav`: phát khi thua.
+* `boss_roar.wav`: phát khi boss gấu Bắc Cực xuất hiện.
+* `bomb.wav`: phát khi kích hoạt bom.
+* `not_enough_coin.wav`: phát khi không đủ xu để mua vật phẩm trong shop.
+* `intro.wav`: âm thanh mở đầu/cắt cảnh.
+
+Âm thanh giúp tăng cảm giác phản hồi cho người chơi, đặc biệt ở các hành động như va chạm, nhặt xu, bắn đạn và boss xuất hiện.
+
+---
+
+## ⚙️ Cài đặt môi trường
+
+### 1. Clone project
+
+```bash
+git clone https://github.com/USERNAME/penguin-path.git
+cd penguin-path
+```
+
+Thay `USERNAME` bằng tên tài khoản GitHub của bạn.
+
+### 2. Tạo môi trường ảo
+
+Trên Windows:
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+Trên macOS/Linux:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+### 3. Cài thư viện
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Chạy game
+
+```bash
+python main.py
+```
+
+---
+
+## 📦 Requirements
+
+Các thư viện chính cần dùng:
+
+```txt
+pygame==2.6.1
+opencv-python
+mediapipe
+numpy
+```
+
+Trong đó:
+
+* `pygame`: dùng để xây dựng game 2D.
+* `opencv-python`: dùng để đọc camera.
+* `mediapipe`: dùng để nhận diện tay.
+* `numpy`: hỗ trợ xử lý dữ liệu hình ảnh và tính toán.
+
+---
+
+## 🧩 Công nghệ sử dụng
+
+* **Python**: ngôn ngữ lập trình chính.
+* **Pygame**: xây dựng gameplay, nhân vật, vật cản, UI và âm thanh.
+* **OpenCV**: xử lý camera.
+* **MediaPipe**: nhận diện bàn tay và gesture.
+* **Pygame Mixer**: phát nhạc nền và hiệu ứng âm thanh.
+
+---
+
+## 🎯 Mục tiêu gameplay
+
+Người chơi cần giúp Piko vượt qua các vùng băng nguy hiểm bằng cách:
+
+1. Né vật cản.
+2. Thu thập xu.
+3. Quản lý máu và năng lượng.
+4. Mua vật phẩm trong shop.
+5. Sử dụng khiên và súng hợp lý.
+6. Vượt qua boss gấu Bắc Cực ở màn cuối.
+
+Game yêu cầu người chơi vừa phản xạ nhanh, vừa biết quản lý tài nguyên như máu, xu, năng lượng và vật phẩm.
+
+---
+
+## 🧠 Một số cơ chế nổi bật
+
+### Máu không hồi giữa màn
+
+Piko có lượng máu cố định. Máu không tự hồi khi sang màn mới.
+
+Ví dụ: nếu màn 1 Piko còn 3 máu, khi sang màn 2 Piko vẫn chỉ có 3 máu. Người chơi cần mua hồi máu trong shop nếu muốn hồi lại.
+
+### Năng lượng dùng chung
+
+Súng và khiên dùng chung một thanh năng lượng.
+
+* Bắn đạn tuyết: tốn 1 năng lượng.
+* Bật khiên: tốn 5 năng lượng.
+
+Cơ chế này buộc người chơi phải cân nhắc giữa tấn công và phòng thủ.
+
+### Boss có vật thể ném riêng
+
+Vật thể boss ném không xuất hiện ngay như vật cản thường. Nó bay từ tay boss ra đường trước, sau đó mới trôi về phía Piko như một vật cản.
+
+Điều này giúp hành động ném của boss rõ ràng hơn và tạo cảm giác boss thật sự đang tấn công người chơi.
+
+### Bão tuyết lớn
+
+Bão tuyết có thể là một vật thể lớn chiếm cả 3 làn. Khi bão tuyết đi tới vị trí của Piko, người chơi có thể bị sát thương dù đang đứng ở bất kỳ làn nào.
+
+### Shop giữa các màn
+
+Sau khi hoàn thành màn chơi, người chơi có thể vào shop để mua vật phẩm bằng xu đã thu thập được.
+
+Các vật phẩm gồm:
+
+* Hồi máu
+* Năng lượng
+* Thuốc làm chậm
+* Bom
+
+Shop giúp người chơi chuẩn bị tốt hơn trước khi bước vào màn tiếp theo.
+
+---
+
+## 🧪 Trạng thái phát triển
+
+Game hiện đang trong giai đoạn prototype/mở rộng tính năng.
+
+Các phần đã có:
+
+* Gameplay 3 làn.
+* Vật cản.
+* Coin.
+* Shop.
+* Boss.
+* Cutscene mở đầu.
+* Âm thanh.
+* Camera hand tracking.
+* UI tiếng Việt.
+* Hệ thống máu.
+* Hệ thống năng lượng.
+* Vật phẩm hỗ trợ.
+
+Các phần có thể phát triển thêm:
+
+* Lưu điểm cao.
+* Thêm nhiều màn chơi.
+* Thêm nhiều boss.
+* Thêm nâng cấp kỹ năng.
+* Thêm hiệu ứng chuyển cảnh.
+* Tối ưu hiệu năng.
+* Đóng gói game thành file `.exe`.
+
+---
+
+## 🛠️ Lỗi thường gặp
+
+### 1. Không mở được camera
+
+Nếu terminal báo không mở được camera, game vẫn có thể chơi bằng bàn phím.
+
+Cách kiểm tra:
+
+* Camera có đang bị ứng dụng khác chiếm không.
+* Máy có camera không.
+* OpenCV đã được cài đúng chưa.
+* Camera index có đúng không.
+
+### 2. Không tìm thấy ảnh
+
+Nếu terminal báo:
+
+```txt
+Không tìm thấy ảnh...
+```
+
+Cần kiểm tra:
+
+* File ảnh có đúng tên không.
+* File có nằm đúng thư mục `assets/...` không.
+* Đuôi file có đúng là `.png`, `.jpg`, `.jpeg` không.
+* Đường dẫn trong code có khớp với thư mục thật không.
+
+### 3. Không nghe thấy âm thanh
+
+Cần kiểm tra:
+
+* File âm thanh có nằm trong `assets/sounds/` không.
+* Tên file trong code có đúng không.
+* File là `.wav` hoặc định dạng Pygame hỗ trợ.
+* Âm lượng máy có bị tắt không.
+
+### 4. Game bị đen màn hình
+
+Cần kiểm tra:
+
+* `pygame.display.flip()` có nằm cuối vòng lặp game không.
+* Phần `draw` có chạy đúng theo `game_state` không.
+* Intro/cutscene có bị `return` quá sớm không.
+* Có vẽ nền mỗi frame không.
+
+### 5. Game bị lệch giao diện sau khi đổi kích thước màn hình
+
+Cần kiểm tra:
+
+* Các vị trí UI có còn dùng tọa độ cứng cũ không.
+* `WIDTH`, `HEIGHT`, `LANES`, `ROAD_*` trong `settings.py` đã đồng bộ chưa.
+* Camera preview, HUD, shop và panel có căn theo `WIDTH // 2`, `HEIGHT // 2` chưa.
+
+---
+
+## 📌 Ghi chú
+
+Đây là project game học tập và thử nghiệm, tập trung vào:
+
+* Pygame 2D.
+* Điều khiển nhân vật bằng bàn phím và camera.
+* Nhận diện tay bằng MediaPipe.
+* Thiết kế gameplay nhiều màn.
+* Boss battle.
+* Shop và item.
+* Quản lý asset hình ảnh/âm thanh.
+* Cắt cảnh mở đầu.
+* UI tiếng Việt.
+
+Project có thể tiếp tục mở rộng thêm nhiều tính năng mới trong tương lai.
+
+---
+
+## 👤 Tác giả
+
+Project được phát triển bởi *Lại Minh Hiệp* và *Nguyễn Quang Duy*.
+
 
